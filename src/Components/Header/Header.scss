@@ -1,0 +1,22 @@
+.header {
+  margin: 0;
+  padding: 14px 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__nav_navlink {
+    margin: 0;
+    font-size: 40px;
+    color: #323232;
+    text-decoration: none;
+  }
+  &__nav_navlink > span {
+    padding-left: 10px;
+    color: rgb(0, 38, 255);
+  }
+}

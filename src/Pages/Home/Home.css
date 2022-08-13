@@ -1,0 +1,113 @@
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+.home__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 30px;
+}
+
+.home__input {
+  width: 500px;
+  padding: 13px 17px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  border: 4px solid transparent;
+  color: #424242;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.home__input:focus {
+  border: 4px solid #ffc477;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.home__input::-webkit-input-placeholder {
+  color: #a7a7a7;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.home__input:-ms-input-placeholder {
+  color: #a7a7a7;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.home__input::-ms-input-placeholder {
+  color: #a7a7a7;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.home__input::placeholder {
+  color: #a7a7a7;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.home__select {
+  width: 500px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 4px solid transparent;
+  outline: none;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  color: #959595;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.home__select:focus {
+  border: 4px solid #ffc477;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  color: #474747;
+}
+
+.home__select_option {
+  padding: 8px 14px;
+  margin: 0;
+  background-color: antiquewhite;
+}
+
+.home__button {
+  margin-top: 30px;
+  width: 500px;
+  padding: 7px 20px;
+  border: 4px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  color: #909090;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 22px;
+  background-color: antiquewhite;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.home__button:focus {
+  border: 4px solid #ffc477;
+  color: #474747;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/*# sourceMappingURL=Home.css.map */

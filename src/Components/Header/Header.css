@@ -1,0 +1,32 @@
+.header {
+  margin: 0;
+  padding: 14px 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__nav_navlink {
+  margin: 0;
+  font-size: 40px;
+  color: #323232;
+  text-decoration: none;
+}
+
+.header__nav_navlink > span {
+  padding-left: 10px;
+  color: #0026ff;
+}
+/*# sourceMappingURL=Header.css.map */
