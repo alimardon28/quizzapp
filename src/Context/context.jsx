@@ -15,31 +15,40 @@ const API_URL = "https://opentdb.com/api.php?";
 const Context = createContext();
 
 const Provider = ({ children }) => {
+  const [data, setData] = useState([]);
   const [test, setTest] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setErorr] = useState(false);
   const [correct, setCorrect] = useState(0);
   const [index, setIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [quiz, setQuiz] = useState({
     amount: 10,
-    category: "sports",
-    difficulty: "easy",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchTest = async (url) => {
     setLoading(true);
-    const res = await axios(url);
 
-    if (res) {
-      const data = res.data.results;
-      if (data.length > 0) {
-        setTest(data);
-        setLoading(false);
-      } else {
-        setErorr(true);
-      }
-    }
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+    console.log(data);
+    // if (data) {
+    //   const data = res.data.results;
+    //   if (data.length > 0) {
+    //     setTest(data);
+    //     setLoading(false);
+    //   } else {
+    //     setErorr(true);
+    //   }
+    // }
+  };
+
+  const hendleSubmit = (e) => {
+    e.preventDefault();
+    const { amount } = quiz;
+    const url = `${API_URL}amount=${amount}&category=22&difficulty=hard&type=multiple`;
+    fetchTest(url);
   };
 
   const hendleNext = () => {
@@ -85,15 +94,6 @@ const Provider = ({ children }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setQuiz({ ...quiz, [name]: value });
-  };
-
-  const hendleSubmit = (e) => {
-    e.preventDefault();
-    const { amount, category, difficulty } = quiz;
-
-    const url = `${API_URL}amount=${amount}&difficulty=${difficulty}&category${category}=${table[category]}&type=multiple`;
-    fetchTest(url);
-    console.log(url);
   };
 
   return (

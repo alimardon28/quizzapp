@@ -28,11 +28,9 @@ const Home = () => {
             </option>
           </select>
 
-          {/* <NavLink to="/tests"> */}
           <button className="home__button" type="submit" onClick={hendleSubmit}>
             start
           </button>
-          {/* </NavLink> */}
           {error && <p className="error">Not Found</p>}
         </form>
       </div>

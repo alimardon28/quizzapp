@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import "../Tests/Tests.scss";
 import { cloudContext } from "../../Context/context";
 
+
 const Tests = () => {
   const { loading, test, index, correct, hendlePrev, hendleNext, addWorking } =
     cloudContext();
-
   const { tests, incorrect_answers, correct_answer } = test[index];
 
   let answers = [...incorrect_answers];
@@ -19,6 +19,7 @@ const Tests = () => {
     answers[tempIndex] = correct_answer;
   }
 
+  console.log(answers);
   return (
     <div className="tests">
       <div className="container tests__container">
@@ -33,15 +34,17 @@ const Tests = () => {
           <>
             {answers.map((anser, index) => {
               <>
-                <div className="tests__center_top">
+                <div className="tests__center_top" key={index}>
                   <p className="tests__center_top_desc">{anser.question}</p>
                 </div>
-                <div className="tests__center_center">
-                  <span className="tests__center_center_span">
-                    <span className="tests__center_center_span_span">
-                      {anser.incorrect_answers}
-                    </span>
-                  </span>
+                <div className="tests__center_center" key={index}>
+                  {incorrect_answers.map((test) => {
+                    <span className="tests__center_center_span">
+                      <span className="tests__center_center_span_span">
+                        {test}
+                      </span>
+                    </span>;
+                  })}
                 </div>
               </>;
             })}
